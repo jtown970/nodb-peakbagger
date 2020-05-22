@@ -1,26 +1,72 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import axios from 'axios'
 import './App.css';
+import Header from './components/Header'
+import HikerDisplay from './components/HikerDisplay'
+import AddHiker from './components/AddHiker'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      hiker: []
+    }
+
+    this.addHiker = this.addHiker.bind(this)
+    this.editHiker = this.editHiker.bind(this)
+    this.deleteHiker = this.deleteHiker.bind(this)
+  }
+
+  componentDidMount(){
+    axios.get('/api/hikers')
+    .then(res => {
+      this.setState({
+        hiker: res.data
+      })
+    })
+  }
+
+  addHiker(name, miles, summits){
+    const body = {name, miles, summits}
+    axios.post('/api/hikers', body)
+    .then(res => {
+      this.setState({
+        hiker: res.data
+      })
+    })
+  }
+
+  editHiker(id, name, miles, summits){
+    const body = {id, name, miles, summits}
+    axios.put(`/api/hikers/${id}`)
+    .then(res => {
+      this.setState({
+        hiker: res.data
+      })
+    })
+  }
+
+  deleteHiker(id){
+    axios.delete(`/api/hikers/${id}`)
+    .then(res => {
+      this.setState({
+        hiker: res.data
+      })
+    })
+  }
+
+
+
+  render(){
+    return (
+      <div className="App">
+        <h1>app.js</h1>
+        <Header />
+        <HikerDisplay  />
+        <AddHiker/>
+      </div>
+    );
+  }
 }
 
 export default App;
