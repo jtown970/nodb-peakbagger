@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AddPeak from './AddPeak'
 
 
 class HikerDisplay extends Component {
@@ -58,7 +59,7 @@ class HikerDisplay extends Component {
             <button onClick={() => this.toggleEdit()}>Cancel</button>
           </div>
         )}
-
+        <AddPeak/>
         <button className="btn delete-btn" onClick={() => this.props.delete(this.props.data.id)}>
           Delete
         </button>

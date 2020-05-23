@@ -20,7 +20,7 @@ module.exports = {
 
   addPeak: (req, res) => {
     const {hiker_id} = req.params
-    const {peak, newNotes, newMount} = req.body
+    const {peak} = req.body
 
     const index = hikers.findIndex(elem => elem.id === +hiker_id)
 
@@ -30,8 +30,8 @@ module.exports = {
 
     
     hikers[index].peaks = peak
-    hikers[index].notes = newNotes
-    hikers[index].mount = newMount
+    // hikers[index].notes = newNotes
+    // hikers[index].mount = newMount
     
 
     // hikers.push(addMountain, addElevation, addDate)

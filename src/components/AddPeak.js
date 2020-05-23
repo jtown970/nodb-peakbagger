@@ -5,10 +5,12 @@ export default class AddPeak extends Component {
     super()
     this.state = {
       isAdding: false,
-      peak: {},
-      mountain: '',
-      elevation: 0,
-      date: 0
+      peak: {
+        newMountain: '',
+        newElevation: '',
+        newDate: 0,
+        newNotes: ''
+      },
     }
   }
 
@@ -18,35 +20,51 @@ export default class AddPeak extends Component {
     })
   }
 
-  handleFistName(e){
+  handleMountain(e){
     this.setState({
-      peak: e
+      newMountain: e.target.value
     })
   }
-  handleLastName(e){
+  handleElevation(e){
     this.setState({
-      last_name: e.target.value
+      newElevation: e.target.value
     })
   }
-  handleMiles(e){
+  handleDate(e){
     this.setState({
-      miles: e.target.value
+      newDate: e.target.value
     })
   }
-  handleSummits(e){
+
+  handleNotes(e){
     this.setState({
-      summits: e.target.value
+      newNotes: e.target.value
     })
   }
 
   handleSavedAdd(){
-    this.props.addHiker( this.state.first_name, this.state.last_name, this.state.miles, this.state.summits)
+    this.props.addPeak( this.state.peak.newMountain, this.state.peak.newElevation, this.state.peak.newDate)
     this.toggleAdd()
   }
   render() {
+    
+
     return (
       <div>
-        
+        {/* <h1>AddHiker.js</h1> */}
+
+        {!this.state.isAdding ? (
+          <button  className="btn add-hiker-btn" onClick={() => this.toggleAdd()}>ADD Mountain</button>     
+        ) : (
+          <div>
+            <input placeholder="Mountain name" onChange={(e) => this.handleMountain(e)} />
+            <input type="number" placeholder="Elevation" onChange={(e) => this.handleElevation(e)} />
+            <input placeholder="Date Hiked" type="number" onChange={(e) => this.handleDate(e)} />
+            <input placeholder="Notes" type="text" onChange={(e) => this.handleNotes(e)} />
+            <button className="btn save-btn" onClick={() => this.handleSavedAdd()}>Save</button>
+            <button className="btn cancel-btn" onClick={() => this.toggleAdd()}>Cancel</button>
+          </div>
+        )}
       </div>
     )
   }
