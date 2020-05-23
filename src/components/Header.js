@@ -10,8 +10,8 @@ export default function header() {
         </nav>
       </div>
       <section className="title-section">
-          <h1>PEAKBAGGER</h1>
-          <h2>colorado 14ers</h2>
+          <h1 className="title">PEAKBAGGER</h1>
+          <h2 className="title-small">colorado 14ers</h2>
       </section>
     </header>
 

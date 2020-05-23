@@ -37,6 +37,16 @@ class App extends Component {
     .catch(err => window.alert('Sh*t Happens', err))
   }
 
+  addPeak(peak, mountain, elevation, date){
+    const body = {peak, mountain, elevation, date}
+    axios.post('/api/hiker', body)
+    .then(res => {
+      this.setState({
+        hiker: res.data
+      })
+    })
+  }
+
   editHiker(id, newSummit){
     const body = {id, newSummit}
     axios.put(`/api/hikers/${id}`, body)
