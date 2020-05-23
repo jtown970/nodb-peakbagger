@@ -26,13 +26,6 @@
   background-color: aqua;
 }
 
-svg {
-  height: 100%;
-  width: 100vw;
-  z-index: -1;
-}
-
-
 p {
   padding: 0 25px;
   margin-bottom: 5%;
@@ -42,13 +35,10 @@ p {
 }
 
 .hikers-displayed{
-  /* top: 10%; */
-  /* position: absolute; */
   width: 10vw;
   height: 40vh;
   background-color: aqua;
   border: 1px solid black;
-  
 }
 
 .add-hiker-btn {

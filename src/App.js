@@ -23,6 +23,7 @@ class App extends Component {
         hiker: res.data
       })
     })
+    .catch(err => window.alert('Sh*t Happens', err))
   }
 
   addHiker(first_name, last_name, miles, summits){
@@ -33,6 +34,7 @@ class App extends Component {
         hiker: res.data
       })
     })
+    .catch(err => window.alert('Sh*t Happens', err))
   }
 
   editHiker(id, newSummit){
@@ -43,6 +45,7 @@ class App extends Component {
         hiker: res.data
       })
     })
+    .catch(err => window.alert('Sh*t Happens', err))
   }
 
   deleteHiker(id){
@@ -56,9 +59,6 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <div>
-          
-        </div>
         <Header />
 
         <HandleHikers 

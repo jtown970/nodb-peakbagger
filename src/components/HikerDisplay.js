@@ -11,7 +11,6 @@ class HikerDisplay extends Component {
       newMiles: 0,
       newSummits: 0
     }
-
   }
 
   toggleEdit(){
