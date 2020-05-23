@@ -4,20 +4,14 @@
   "last_name": "Towner",
   "miles": 75,
   "summits": 12,
-  "peaks": {
-    "mountain": "Mount Lincoln",
-    "elevation": 14295,
-    "date": 8172019
-  }
+  "peaks": {}
+
 }, {
   "id": 2,
   "first_name": "Barrett",
   "last_name": "Smith",
   "miles": 225,
   "summits": 22,
-  "mountain": "Mount Lincoln",
-  "elevation": 14295,
-  "date": 8172019,
-  "note": {}
+  "peaks": {}
   
 }]

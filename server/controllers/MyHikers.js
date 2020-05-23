@@ -20,7 +20,7 @@ module.exports = {
 
   addPeak: (req, res) => {
     const {hiker_id} = req.params
-    const {newMountain, newElevation, newDate, peak, newNotes} = req.body
+    const {peak, newNotes, newMount} = req.body
 
     const index = hikers.findIndex(elem => elem.id === +hiker_id)
 
@@ -28,11 +28,10 @@ module.exports = {
       return res.status(404).send('Hiker not found')
     }
 
-    hikers[index].mountain = newMountain
-    hikers[index].elevation = newElevation
-    hikers[index].date = newDate
-    hikers[index].note = peak
+    
+    hikers[index].peaks = peak
     hikers[index].notes = newNotes
+    hikers[index].mount = newMount
     
 
     // hikers.push(addMountain, addElevation, addDate)
