@@ -60,7 +60,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-
         <HandleHikers 
         hiker={this.state.hiker} 
         delete={this.deleteHiker}
