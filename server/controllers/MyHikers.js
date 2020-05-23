@@ -22,7 +22,7 @@ module.exports = {
 
   editHiker: (req,res) => {
     const {hiker_id} = req.params
-    const {first_name, last_name, miles, summit} = req.body
+    const {newSummit} = req.body
 
     const index = hikers.findIndex(elem => elem.id === +hiker_id)
 
@@ -30,15 +30,9 @@ module.exports = {
       return res.status(404).send('Hiker not found')
     }
 
-    const updatedHiker = {
-      id: +hiker_id,
-      first_name: first_name || hikers[index].first_name,
-      last_name: last_name || hikers[index].last_name,
-      miles: miles || hikers[index].miles,
-      summit: summit || hikers[index].summits
-    }
+    hikers[index].summits = newSummit
 
-    hikers[index] = updatedHiker
+    
 
     res.status(200).send(hikers)
   },

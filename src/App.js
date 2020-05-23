@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 import './App.css';
 import Header from './components/Header'
-import HikerDisplay from './components/HikerDisplay'
 import AddHiker from './components/AddHiker'
+import HandleHikers from './components/HandleHikers'
+import axios from 'axios'
 
 class App extends Component {
   constructor(){
@@ -11,7 +11,6 @@ class App extends Component {
     this.state = {
       hiker: []
     }
-
     this.addHiker = this.addHiker.bind(this)
     this.editHiker = this.editHiker.bind(this)
     this.deleteHiker = this.deleteHiker.bind(this)
@@ -26,8 +25,8 @@ class App extends Component {
     })
   }
 
-  addHiker(name, miles, summits){
-    const body = {name, miles, summits}
+  addHiker(first_name, last_name, miles, summits){
+    const body = {first_name, last_name, miles, summits}
     axios.post('/api/hikers', body)
     .then(res => {
       this.setState({
@@ -36,9 +35,9 @@ class App extends Component {
     })
   }
 
-  editHiker(id, name, miles, summits){
-    const body = {id, name, miles, summits}
-    axios.put(`/api/hikers/${id}`)
+  editHiker(id, newSummit){
+    const body = {id, newSummit}
+    axios.put(`/api/hikers/${id}`, body)
     .then(res => {
       this.setState({
         hiker: res.data
@@ -47,23 +46,27 @@ class App extends Component {
   }
 
   deleteHiker(id){
-    axios.delete(`/api/hikers/${id}`)
-    .then(res => {
+    axios.delete(`/api/hikers/${id}`).then((res) => {
       this.setState({
         hiker: res.data
       })
     })
   }
-
-
-
+  
   render(){
     return (
       <div className="App">
-        <h1>app.js</h1>
+        <div>
+          
+        </div>
         <Header />
-        <HikerDisplay  />
-        <AddHiker/>
+
+        <HandleHikers 
+        hiker={this.state.hiker} 
+        delete={this.deleteHiker}
+        editHiker={this.editHiker}/>
+        <AddHiker addHiker={this.addHiker} />
+
       </div>
     );
   }

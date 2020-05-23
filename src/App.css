@@ -1,4 +1,65 @@
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+  background-color: #36454f;
+}
+
 .App {
   text-align: center;
 }
 
+.nav {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.nav-items {
+  margin-top: 8vh;
+}
+
+.nav {
+  background-color: aqua;
+}
+
+svg {
+  height: 100%;
+  width: 100vw;
+  z-index: -1;
+}
+
+
+p {
+  padding: 0 25px;
+  margin-bottom: 5%;
+  justify-content: space-evenly;
+  background-color: aqua;
+  
+}
+
+.hikers-displayed{
+  /* top: 10%; */
+  /* position: absolute; */
+  width: 10vw;
+  height: 40vh;
+  background-color: aqua;
+  border: 1px solid black;
+  
+}
+
+.add-hiker-btn {
+  margin-top: 3%;
+}
+
+.btn {
+  background-color: lightgray;
+  color: #36454f;
+  padding: 3px 10px;
+  border-radius: 5px;
+  box-shadow: 4px 5px 10px #42424256;
+
+}
