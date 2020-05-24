@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class AddHiker extends Component {
+class AddMountain extends Component {
   constructor(){
     super()
     this.state = {
@@ -78,14 +78,14 @@ class AddHiker extends Component {
           <button  className="btn add-hiker-btn" onClick={() => this.toggleAdd()}>ADD Mountain</button>     
         ) : (
           <div>
-            <input placeholder="First Name" onChange={(e) => this.handleFistName(e)} />
-            <input placeholder="Last Name" onChange={(e) => this.handleLastName(e)} />
-            <input placeholder="Miles Hiked" type="number" onChange={(e) => this.handleMiles(e)} />
-            <input placeholder="Summits Conquered" type="number" onChange={(e) => this.handleSummits(e)} />
-            <input placeholder="First Name" onChange={(e) => this.handleFistName(e)} />
-            <input placeholder="Last Name" onChange={(e) => this.handleLastName(e)} />
-            <input placeholder="Miles Hiked" type="number" onChange={(e) => this.handleMiles(e)} />
-            <input placeholder="Summits Conquered" type="number" onChange={(e) => this.handleSummits(e)} />
+            <input placeholder="Mountain Name" onChange={(e) => this.handleMountain(e)} />
+            <input placeholder="Elevation" onChange={(e) => this.handleElevation(e)} />
+            <input placeholder="Elevation Gain" type="number" onChange={(e) => this.handleGain(e)} />
+            <input placeholder="Mountain Rang" type="text" onChange={(e) => this.handleRang(e)} />
+            <input placeholder="Miles" onChange={(e) => this.handleMiles(e)} />
+            <input placeholder="Date Hiked" onChange={(e) => this.handleDate_Hiked(e)} />
+            <input placeholder="Rating 1-5" type="number" onChange={(e) => this.handleRating(e)} />
+            <input placeholder="notes" type="text" onChange={(e) => this.handleNotes(e)} />
             <button className="btn save-btn" onClick={() => this.handleSavedAdd()}>Save</button>
             <button className="btn cancel-btn" onClick={() => this.toggleAdd()}>Cancel</button>
           </div>
@@ -94,4 +94,4 @@ class AddHiker extends Component {
     )
   }
 }
-export default AddHiker
+export default AddMountain
