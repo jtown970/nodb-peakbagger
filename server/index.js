@@ -6,7 +6,7 @@ const mountainCtrl = require('./controllers/MyMountains')
 
 app.use(express.json())
 
-app.get(`/api/hikers`, hikersCtrl.getHikers)
+app.get(`/api/hikers`, hikersCtrl.getHikers, mountainCtrl.getMountains)
 app.post(`/api/hikers`, hikersCtrl.addHiker)
 app.put(`/api/hikers/:hiker_id`, hikersCtrl.editHiker)
 app.delete(`/api/hikers/:hiker_id`, hikersCtrl.deleteHiker)
