@@ -18,29 +18,6 @@ module.exports = {
     res.status(200).send(hikers)
   },
 
-  addPeak: (req, res) => {
-    const {hiker_id} = req.params
-    const {peak} = req.body
-
-    const index = hikers.findIndex(elem => elem.id === +hiker_id)
-
-    if(index === -1){
-      return res.status(404).send('Hiker not found')
-    }
-
-    
-    hikers[index].peaks = peak
-    // hikers[index].notes = newNotes
-    // hikers[index].mount = newMount
-    
-
-    // hikers.push(addMountain, addElevation, addDate)
-
-    res.status(200).send(hikers)
-  },
-
-
-
   editHiker: (req,res) => {
     const {hiker_id} = req.params
     const {newSummit} = req.body

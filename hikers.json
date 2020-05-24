@@ -3,15 +3,11 @@
   "first_name": "Jason",
   "last_name": "Towner",
   "miles": 75,
-  "summits": 12,
-  "peaks": {}
-
+  "summits": 12
 }, {
   "id": 2,
   "first_name": "Barrett",
   "last_name": "Smith",
   "miles": 225,
-  "summits": 22,
-  "peaks": {}
-  
+  "summits": 22
 }]

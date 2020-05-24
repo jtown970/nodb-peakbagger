@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AddPeak from './AddPeak'
 
 
 class HikerDisplay extends Component {
@@ -10,7 +9,9 @@ class HikerDisplay extends Component {
       newFirst_name: '',
       newLast_name: '',
       newMiles: 0,
-      newSummits: 0
+      newSummits: 0,
+
+      
     }
   }
 
@@ -42,8 +43,8 @@ class HikerDisplay extends Component {
     const newFirst_name = this.props.data.first_name
     const newLast_name = this.props.data.last_name
     const newMiles = this.props.data.miles
-    const newSummits = this.props.data.summits   
-
+    const newSummits = this.props.data.summits  
+    
     return (
       <div className="hikers-displayed">
         <p className="fist-name hiker-data">Name: {newFirst_name}</p>
@@ -59,7 +60,6 @@ class HikerDisplay extends Component {
             <button onClick={() => this.toggleEdit()}>Cancel</button>
           </div>
         )}
-        <AddPeak/>
         <button className="btn delete-btn" onClick={() => this.props.delete(this.props.data.id)}>
           Delete
         </button>

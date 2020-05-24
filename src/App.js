@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header'
 import AddHiker from './components/AddHiker'
 import HandleHikers from './components/HandleHikers'
-import AddPeak from './components/AddPeak'
+// import AddPeak from './components/AddPeak'
 import axios from 'axios'
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
       hiker: []
     }
     this.addHiker = this.addHiker.bind(this)
-    this.addPeaks = this.addPeaks.bind(this)
+    this.addPeak = this.addPeak.bind(this)
     this.editHiker = this.editHiker.bind(this)
     this.deleteHiker = this.deleteHiker.bind(this)
   }
@@ -39,8 +39,8 @@ class App extends Component {
     .catch(err => window.alert('Sh*t Happens', err))
   }
 
-  addPeaks(id,peak){
-    const body = {id, peak}
+  addPeak(id, newMountain, newElevation, newDate, newNotes){
+    const body = {id, newMountain, newElevation, newDate, newNotes}
     axios.put('/api/hiker', body)
     .then(res => {
       this.setState({
@@ -75,10 +75,10 @@ class App extends Component {
         <HandleHikers 
         hiker={this.state.hiker} 
         delete={this.deleteHiker}
-        addPeaks={this.addPeaks}
+        addPeak={this.addPeak}
         editHiker={this.editHiker}/>
         <AddHiker addHiker={this.addHiker} />
-        <AddPeak hikers={this.state.hiker}/>
+    
 
       </div>
     );

@@ -7,7 +7,7 @@
 .App {
   text-align: center;
   background-color: #36454f;
-  height: 100vh;
+  height: 200vh;
 }
 
 .nav {
@@ -44,14 +44,11 @@ p {
   margin-bottom: 5%;
   justify-content: space-evenly;
   background-color: aqua;
-  /* border-bottom: 1px solid black; */
-  
 }
 
 .hikers-displayed{
   margin: 1%;
   width: 10vw;
-  /* height: 40vh; */
   background-color: aqua;
   border: 1px solid black;
 }

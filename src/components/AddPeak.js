@@ -43,7 +43,8 @@ export default class AddPeak extends Component {
   }
 
   handleSavedAdd(){
-    this.props.addPeak( this.state.peak.newMountain, this.state.peak.newElevation, this.state.peak.newDate)
+    const {data} = this.props
+    this.props.addPeak(data.id, this.state.peak.newMountain, this.state.peak.newElevation, this.state.peak.newDate)
     this.toggleAdd()
   }
   render() {
