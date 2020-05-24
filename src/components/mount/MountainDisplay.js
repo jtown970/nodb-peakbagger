@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-class HikerDisplay extends Component {
+class MountainDisplay extends Component {
   constructor(){
     super()
     this.state = {
@@ -14,8 +14,6 @@ class HikerDisplay extends Component {
       newDate_Hiked: "",
       newRating: 0,
       newNotes: ""
-
-      
     }
   }
 
@@ -32,7 +30,7 @@ class HikerDisplay extends Component {
       gain: e.target.value,
       rang: e.target.value,
       miles: e.target.value,
-      Date_Hiked: e.target.value,
+      date_Hiked: e.target.value,
       rating: e.target.value,
       notes: e.target.value,
     })
@@ -40,10 +38,7 @@ class HikerDisplay extends Component {
 
   handleSavedChanges(){
     const {data} = this.props
-    this.props.editHiker(data.id, this.newFirst_name)
-    this.props.editHiker(data.id, this.state.LastName)
-    this.props.editHiker(data.id, this.state.miles)
-    this.props.editHiker(data.id, this.state.summits)
+    this.props.editMountain(data.id, this.state.notes)
     this.toggleEdit()
   }
   
@@ -53,29 +48,36 @@ class HikerDisplay extends Component {
     const newGain = this.props.data.gain
     const newRang = this.props.data.rang  
     const newMiles = this.props.data.miles
-    const newDate_Hiked = this.props.data.data_Hiked
+    const newDate_Hiked = this.props.data.date_Hiked
     const newRating = this.props.data.rating
     const newNotes = this.props.data.notes 
     
     return (
       <div className="hikers-displayed">
-        <p className="fist-name hiker-data">mountain: {newMountain}</p>
-        <p className="fist-name hiker-data">Elevations: {newElevation}</p>
-        <p className="last-name hiker-data">Last name: {newGain}</p>
-        <p className="miles hiker-data">Miles: {newRang}</p>
-        <p className="fist-name hiker-data">mountain: {newMiles}</p>
-        <p className="last-name hiker-data">Last name: {newDate_Hiked}</p>
-        <p className="miles hiker-data">Miles: {newRating}</p>
+        <ul>Mountain:</ul>
+        <p className="fist-name hiker-data"> {newMountain}</p>
+        <hr className="hr"/>
+        <ul>Elevation:</ul>
+        <p className="fist-name hiker-data">{newElevation}</p>
+        <hr className="hr"/>
+        <ul>Elevation Gain:</ul>
+        <p className="last-name hiker-data">{newGain}</p>
+        <hr className="hr"/>
+        <ul>Mountain Rang:</ul>
+        <p className="miles hiker-data">{newRang}</p>
+        <hr className="hr"/>
+        <ul>Miles</ul>
+        <p className="fist-name hiker-data">{newMiles}</p>
+        <hr className="hr"/>
+        <ul>Date Hiked:</ul>
+        <p className="last-name hiker-data">{newDate_Hiked}</p>
+        <hr className="hr"/>
+        <ul>Rating:</ul>
+        <p className="miles hiker-data">{newRating}/5</p>
+        <hr className="hr"/>
+        <ul>Notes:</ul>
+        <p className="hiker-data summits" onDoubleClick={() => this.toggleEdit()}>{newNotes}</p>     
         
-       {!this.state.isEditing ? (
-          <p className="hiker-data summits" onDoubleClick={() => this.toggleEdit()}>Conquered: {newNotes}/63</p>     
-        ) : (
-          <div>
-            <input placeholder="Summits Conquered" type="number" onChange={(e) => this.handleChange(e)} />
-            <button onClick={() => this.handleSavedChanges()}>Save</button>
-            <button onClick={() => this.toggleEdit()}>Cancel</button>
-          </div>
-        )}
         <button className="btn delete-btn" onClick={() => this.props.delete(this.props.data.id)}>
           Delete
         </button>
@@ -84,6 +86,5 @@ class HikerDisplay extends Component {
       
     )
   }
-
 }
-export default HikerDisplay
+export default MountainDisplay

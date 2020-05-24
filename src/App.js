@@ -36,12 +36,10 @@ class App extends Component {
       })
     })
     .catch(err => window.alert('Sh*t Happens', err))
-    
     axios.get('/api/mountains')
     .then(res => {
       this.setState({
-        mountain: res.data,
-        
+        mountain: res.data, //mounting mountain here
       })
     })
     .catch(err => window.alert('Sh*t Happens', err))
@@ -78,17 +76,6 @@ class App extends Component {
   }
   //end of hiker section 
 
-  //start of mountain section
-  // componentDidMount(){
-  //   axios.get('/api/mountains')
-  //   .then(res => {
-  //     this.setState({
-  //       mountain: res.data
-  //     })
-  //   })
-  //   .catch(err => window.alert('Sh*t Happens', err))
-  // }
-
   addMountains(mountain, elevation, gain, rang, miles, date_Hiked, rating, notes){
     const body = {mountain, elevation, gain, rang, miles, date_Hiked, rating, notes}
     axios.post('/api/mountains', body)
@@ -117,9 +104,9 @@ class App extends Component {
       })
     })
   }
-
-  // end of mountain section
   
+  // end of mountain section
+
   render(){
     return (
       <div className="App">
@@ -127,19 +114,13 @@ class App extends Component {
         <HandleHikers 
         hiker={this.state.hiker} 
         delete={this.deleteHiker}
-        // addPeak={this.addPeak}
         editHiker={this.editHiker}/>
         <AddHiker addHiker={this.addHiker} />
-
         <HandleMountain 
         mountain={this.state.mountain}
         delete={this.deleteMountains}
         editMountain={this.editMountains}/>
-        
-
         <AddMountain addMountain={this.addMountains}/>
-    
-
       </div>
     );
   }

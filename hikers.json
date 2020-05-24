@@ -2,12 +2,12 @@
   "id": 1,
   "first_name": "Jason",
   "last_name": "Towner",
-  "miles": 75,
-  "summits": 12
+  "miles": 215,
+  "summits": 21
 }, {
   "id": 2,
   "first_name": "Barrett",
   "last_name": "Smith",
-  "miles": 225,
-  "summits": 22
+  "miles": 340,
+  "summits": 28
 }]

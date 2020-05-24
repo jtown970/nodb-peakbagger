@@ -14,7 +14,7 @@ export default function HandleMountain(props) {
   ))
   return (
     <div className="spacing-hikers-list">
-      <h2>HandleMountain</h2>
+      <h2 className="title">Colorado 14ers</h2>
       <div className="hikers-list"
         style={{ display: 'flex',alignItems:'center', justifyContent: 'center', flexWrap: 'wrap' }}
       >

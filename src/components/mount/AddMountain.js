@@ -72,7 +72,7 @@ class AddMountain extends Component {
   render() {
     return (
       <div>
-        <h1>AddMountain.js</h1>
+        {/* <h1>AddMountain.js</h1> */}
 
         {!this.state.isAdding ? (
           <button  className="btn add-hiker-btn" onClick={() => this.toggleAdd()}>ADD Mountain</button>     

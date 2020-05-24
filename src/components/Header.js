@@ -5,13 +5,12 @@ export default function header() {
     <header className="container-nav">
       <div className="nav-container">
         <nav className="nav">
-          <p className="nav-items">PEAKBAGGER</p>
-          <p className="nav-items">HOME</p>
+          <ol className="nav-items">PEAKBAGGER</ol>
+          <ol className="nav-items">HOME</ol>
         </nav>
       </div>
       <section className="title-section">
-          <h1 className="title">PEAKBAGGER</h1>
-          <h2 className="title-small">colorado 14ers</h2>
+          <h1 className="title">PEAKBAGGERS</h1>
       </section>
     </header>
 
